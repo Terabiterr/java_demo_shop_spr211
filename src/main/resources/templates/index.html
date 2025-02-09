@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Products</h1>
+    <table border="1">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Stock</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="product : ${products}">
+            <td th:text="${product.getId()}"></td>
+            <td th:text="${product.getName()}"></td>
+            <td th:text="${product.getDescription()}"></td>
+            <td th:text="${product.getPrice()}"></td>
+            <td th:text="${product.getStock()}"></td>
+        </tr>
+        </tbody>
+    </table>
+</body>
+</html>
