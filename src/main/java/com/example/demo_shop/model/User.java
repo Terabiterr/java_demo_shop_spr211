@@ -1,6 +1,7 @@
 package com.example.demo_shop.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 
 import java.util.List;
 
