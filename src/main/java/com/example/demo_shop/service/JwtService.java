@@ -12,8 +12,8 @@ import java.util.Date;
 
 @Service
 public class JwtService {
-    //32 символи
-    private final String secreteKey = "PE46ZT3FJCK23LA2NX8R3873A24X525K";
+    //64 символи
+    private final String secreteKey = "PE46ZT3FJCK23LA2NX8R3873A24X525KPE46ZT3FJCK23LA2NX8R3873A24X525K";
     private final UserRepository userRepository;
 
     public JwtService(UserRepository userRepository) {
@@ -24,7 +24,7 @@ public class JwtService {
         return Jwts.builder()
                 .setSubject(username)
                 .setIssuedAt(new Date())
-                .setExpiration(new Date(System.currentTimeMillis() + 60 * 60 * 1000))
+                .setExpiration(new Date(System.currentTimeMillis() + 60 * 60 * 1000)) //1 hour
                 .signWith(SignatureAlgorithm.HS256, secreteKey)
                 .compact();
     }
