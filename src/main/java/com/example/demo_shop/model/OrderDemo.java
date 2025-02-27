@@ -12,7 +12,7 @@ import java.util.List;
 public class OrderDemo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private long id;
     @ManyToOne
     private User user;
     @OneToMany

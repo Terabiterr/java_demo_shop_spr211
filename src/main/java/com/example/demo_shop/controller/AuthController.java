@@ -69,7 +69,7 @@ public class AuthController {
             response.put("message", "Invalid username or password");
             return ResponseEntity.badRequest().body(response);
         }
-        String token = jwtService.generateToken(foundUser.get().getUsername());
+        String token = jwtService.generateJwtToken(foundUser.get());
         response.put("token", token);
         response.put("success", true);
         return ResponseEntity.ok(response);
