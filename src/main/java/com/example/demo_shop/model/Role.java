@@ -4,16 +4,14 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.math.BigDecimal;
 @Getter
 @Setter
 @Entity
-public class OrderItem {
+@Table(name = "roles")
+public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    @ManyToOne
-    private Product product;
-    private int quantity;
-    public BigDecimal price;
+    private long id;
+    @Column(unique = true, nullable = false, length = 255)
+    private String name;
 }
